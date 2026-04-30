@@ -1,0 +1,27 @@
+{
+  "name": "ghost-mode",
+  "version": "0.0.4",
+  "description": "Tree-sitter skeletonization to save 90% input tokens.",
+  "author": {
+    "name": "Justin Balaguer",
+    "url": "https://github.com/justinbalaguer"
+  },
+  "homepage": "https://github.com/justinbalaguer/ghost-mode",
+  "repository": "https://github.com/justinbalaguer/ghost-mode",
+  "license": "MIT",
+  "skills": "./skills/",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/ghost-activate.js\"",
+            "timeout": 5,
+            "statusMessage": "Loading ghost mode..."
+          }
+        ]
+      }
+    ]
+  }
+}
